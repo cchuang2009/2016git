@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://npmcdn.com/jupyter-js-widgets@1.1.2/dist/";
+/******/ 	__webpack_require__.p = "https://unpkg.com/jupyter-js-widgets@1.1.2/dist/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -75,7 +75,7 @@
 	    // If requirejs is not on the page on page load, load it from cdn.
 	    if (!window.requirejs) {
 	        var scriptjs = __webpack_require__(75);
-	        scriptjs('https://npmcdn.com/requirejs/require.js', function() {
+	        scriptjs('https://unpkg.com/requirejs/require.js', function() {
 	            // Define jupyter-js-widget requirejs module
 	            //
 	            // (This is needed for custom widget model to be able to AMD require jupyter-js-widgets.)
@@ -34692,12 +34692,12 @@
 	EmbedManager.prototype.require_error = function(success_callback) {
 	    /**
 	     * Takes a requirejs success handler and returns a requirejs error handler
-	     * that attempts loading the module from npmcdn. 
+	     * that attempts loading the module from unpkg. 
 	     */
 	    return function(err) {
 	        var failedId = err.requireModules && err.requireModules[0];
 	        if (failedId) {
-	            window.require(['https://npmcdn.com/' + failedId + '/dist/index.js'], success_callback);
+	            window.require(['https://unpkg.com/' + failedId + '/dist/index.js'], success_callback);
 	        } else {
 	            throw err;
 	        }
